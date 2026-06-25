@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Académico - Mateo Gabriel Obando Valdivia</title>
+    <style>
+        :root {
+            --bg-color: #0f141c;
+            --primary-color: #e2e8f0;
+            --accent-color: #c5a880; /* Oro viejo / Bronce */
+            --text-color: #94a3b8;
+            --card-bg: #141b24;
+            --border-color: #2a3544;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            color: var(--primary-color);
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .linkedin-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 10px 30px;
+            border: 1px solid var(--accent-color);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 45px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 35px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px;
+            }
+        }
+
+        .info-contacto ul {
+            list-style: none;
+        }
+
+        .info-contacto li {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .info-contacto strong {
+            color: var(--primary-color);
+            display: block;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .sobre-mi p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .school-img-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .school-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            padding: 6px;
+            background: #000;
+            filter: grayscale(20%);
+        }
+
+        .school-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-style: italic;
+            border-bottom: 1px solid var(--accent-color);
+            transition: all 0.3s;
+        }
+
+        .school-link:hover {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 18px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: #0b0f15;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        tr:hover {
+            background-color: #18222d;
+        }
+
+        .table-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .table-link:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+
+        .companions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .companion-card {
+            background: #0b0f15;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .companion-card:hover {
+            border-color: var(--accent-color);
+            background-color: var(--card-bg);
+        }
+
+        .companion-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .companion-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .companion-link:hover {
+            border-color: var(--accent-color);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #55657d;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Mateo Gabriel Obando Valdivia</h1>
+            <p>Estudiante Universitario — Administracion de Negocios / Finanzas</p>
+            <a href="https://www.linkedin.com/in/mateo-obando-7677ab419/" target="_blank" class="linkedin-btn">Acceder al Currículum Académico</a>
+        </header>
+
+        <section id="perfil">
+            <h2>Descripción Personal</h2>
+            <div class="cv-grid">
+                <div class="info-contacto">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><strong>Email</strong>mateo.obando@ucsp.edu.pe</li>
+                        <li><strong>Ubicación</strong>Arequipa, Arequipa, Perú</li>
+                        <li><strong>Educación</strong>Educación Superior en Formación</li>
+                    </ul>
+                </div>
+                <div class="sobre-mi">
+                    <h3>Perfil Profesional</h3>
+                    <p>
+                        Estudiante proactivo con una marcada inclinación hacia la resolución de problemas complejos, el análisis lógico estructurado y el riguroso desarrollo académico. Con experiencia práctica en el campo de Administracion de Negocios y Emprendimientos, asi mismo como de logistica..
+                    </p>
+                    <p>
+                        Me destaco de manera particular por ser una excelente persona para trabajar en grupos, que siempre esta dispuesto a escuchar diferentes puntos de vista y tomarlos en cuenta, para asi poder llegar a un acuerdo y de la misma manera poder lograr el objetivo plantado.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AREA DE EDUCACION ESCOLAR SOLICITADA -->
+        <section id="educacion-escolar">
+            <h2>Educación Escolar</h2>
+            <div class="school-img-container">
+                <img src="img2/mateocolegio.jpg" alt="Promoción Colegio Prescott" class="school-img">
+            </div>
+            <div style="text-align: center;">
+                <p>Exalumno de la comunidad anglo-americana Prescott. Formación cimentada sobre altos estándares de exigencia intelectual, valores fundamentales y excelencia continua, bajo una vision humanista.</p>
+                <br>
+                <a href="https://www.prescott.edu.pe" target="_blank" class="school-link">Visitar el sitio oficial del Colegio Prescott</a>
+            </div>
+        </section>
+        <!-- FIN DEL AREA DE EDUCACION ESCOLAR -->
+
+        <section id="cursos">
+            <h2>Cursos y Cátedras</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Asignatura</th>
+                            <th>Catedrático</th>
+                            <th>Registro Profesional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Analisis de Datos</strong></td>
+                            <td>Dr. Ernesto Cuadros-Vargas</td>
+                            <td><a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" class="table-link">LinkedIn Perfil</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="companeros">
+            <h2>Red de Compañeros</h2>
+            <div class="companions-grid">
+                <div class="companion-card">
+                    <div>
+                        <h3>Ami Hanna Andía Choque</h3>
+                        <p style="font-size: 0.8rem; color:#55657d; font-style: italic; margin-top: 5px;">Sitio Personal</p>
+                    </div>
+                    <a href="https://amiandia-oss.github.io/Ami-Hanna-Andia-Choque/" target="_blank" class="companion-link">Explorar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Juan David García Humpire</h3>
+                        <p style="font-size: 0.8rem; color:#55657d; font-style: italic; margin-top: 5px;">Sitio Personal</p>
+                    </div>
+                    <a href="https://judavi-dev.github.io/" target="_blank" class="companion-link">Explorar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Fernando Sebastián Vera Ramos</h3>
+                        <p style="font-size: 0.8rem; color:#55657d; font-style: italic; margin-top: 5px;">Sitio Personal</p>
+                    </div>
+                    <a href="https://mi-pagina-xipc.vercel.app/" target="_blank" class="companion-link">Explorar</a>
+                </div>
+
+                <div class="companion-card">
+                    <div>
+                        <h3>Thiago Mathias Nieves Checca</h3>
+                        <p style="font-size: 0.8rem; color:#55657d; font-style: italic; margin-top: 5px;">Sitio Personal</p>
+                    </div>
+                    <a href="https://thiagonieves-eng.github.io" target="_blank" class="companion-link">Explorar</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Mateo Obando Valdivia. Registro de Portafolio Académico Universitario.</p>
+        </footer>
+
+    </div>
